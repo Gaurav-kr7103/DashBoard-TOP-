@@ -4,6 +4,12 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
     /* outline: 2px solid red; */
+    --fs-xsmall : 0.5rem;
+    --fs-small : 0.8rem;
+    --fs-medium : 1rem;
+    --fs-large : 1.5rem;
+    --fs-xlarge : 2rem;
+    --fs-xxlarge : 3rem;
 }
 
 body {
@@ -16,6 +22,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr 5fr;
+    gap : 0.5em;
 }
 
 
@@ -86,9 +93,9 @@ body {
     padding-left: 1em;
     padding-top: 1em;
     grid-area : 1 / 1 / -1 / 2;
-    outline: 2px solid green;
-    background-color: lightgreen;
-    color: red;
+    /* outline: 2px solid green; */
+    /* background-color: lightgreen; */
+    /* color: red; */
 }
 .sidebar > div > ul {
     list-style-type: none;
@@ -108,6 +115,63 @@ body {
 
 .main-content {
     grid-area : 2 / 2 / -1 / -1;
-    outline: 2px solid orange;
-    background-color: lightcoral;
+    outline: 2px solid black;
+    background-color: white;
+    display: grid;
+    grid-template: repeat(2, 1fr) / 1fr 1fr 0.8fr;
+    gap : 10px;
+}
+.main-content > div {
+    /* background-color: lightblue; */
+}
+.main-content .projects{
+    height: 100%;
+    width: 100%;
+    grid-column: 1 / 3;
+    grid-row : 1 / -1;
+    padding-left: 1em;
+    padding-right: 1em; ;
+}
+.main-content > div > h3 {
+    height: 20px;
+}
+.main-content .projects .cards {
+    display: grid;
+    grid-template : 1fr 1fr 1fr / 1fr 1fr;
+    /* outline: 2px solid blueviolet; */
+    height: calc(100% - 20px);
+    gap: 2em;
+}
+.main-content .projects .cards div {
+    background-color: white;
+}
+
+
+.announcements {
+    padding-right: 1em;
+}
+.main-content .announcements h3 {
+    height: 20px;
+}
+.announcements .cards {
+    height: calc(100% - 20px);
+    display: grid;
+    grid-template-rows : repeat (3, 1fr);
+    gap : 2px;
+}
+.announcements .cards div {
+    background-color: white;
+    padding: 0.5em;
+    padding: var(--fs-medium);
+}
+.announcements h4 {
+    font-size: var(--fs-medium);
+} 
+.announcements h4 + p {
+    font-size: var(--fs-small);
+}
+
+
+.trending {
+    padding-right: 1em;;
 }
